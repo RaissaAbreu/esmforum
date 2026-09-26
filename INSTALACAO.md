@@ -22,8 +22,8 @@ Depois de realizar os forks no GitHub, clone os seus respectivos repositórios l
 Exemplo:
 
 ```bash
-git clone <URL_DO_SEU_FORK_DO_ESMFORUM>
-git clone <URL_DO_SEU_FORK_DO_ESMFORUM_REACT>
+git clone <https://github.com/RaissaAbreu/esmforum.git>
+git clone <https://github.com/RaissaAbreu/esmforum.git>
 ```
 
 Entre na pasta do backend:

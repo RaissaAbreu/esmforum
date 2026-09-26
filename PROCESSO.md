@@ -156,7 +156,7 @@ Dessa forma, o quadro fornece uma visão do trabalho pendente, do trabalho em an
 Após a criação do projeto, inserir aqui o endereço do GitHub Projects utilizado na entrega:
 
 ```text
-<URL_DO_GITHUB_PROJECTS>
+<https://github.com/users/RaissaAbreu/projects/5>
 ```
 
 > O placeholder deve ser substituído pelo link real do projeto antes da entrega.
