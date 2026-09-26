@@ -7,28 +7,26 @@ describe('Quarto teste end-to-end', () => {
     cy.get('#tabela-perguntas')
       .should('be.visible');
 
-    // Confirma a exclusão no window.confirm()
     cy.on('window:confirm', () => true);
 
-    // Guarda o texto da primeira pergunta
+    // Pega o ID da primeira pergunta
     cy.get('#tabela-perguntas tbody tr')
       .first()
       .find('td')
-      .eq(1)
+      .eq(0)
       .invoke('text')
-      .then((textoPergunta) => {
+      .then((idPergunta) => {
 
-        // Clica em Excluir na primeira linha
+        // Exclui exatamente essa pergunta
         cy.get('#tabela-perguntas tbody tr')
           .first()
           .find('button')
           .contains('Excluir')
           .click();
 
-        // Verifica que o texto da pergunta excluída
-        // não aparece mais na tabela
-        cy.get('#tabela-perguntas')
-          .should('not.contain', textoPergunta.trim());
+        // Verifica que o ID excluído não existe mais
+        cy.get('#tabela-perguntas tbody tr')
+          .should('not.contain', idPergunta.trim());
       });
 
   });
