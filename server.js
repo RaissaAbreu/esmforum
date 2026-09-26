@@ -31,6 +31,33 @@ app.post('/perguntas', (req, res) => {
   } 
 });
 
+app.put('/perguntas/:id_pergunta', (req, res) => {
+    try {
+        const id_pergunta = req.params.id_pergunta;
+        const texto = req.body.pergunta;
+
+        modelo.editar_pergunta(id_pergunta, texto);
+
+        res.json({ id_pergunta: id_pergunta });
+    }
+    catch (erro) {
+        res.status(500).json(erro.message);
+    }
+});
+
+app.delete('/perguntas/:id_pergunta', (req, res) => {
+    try {
+        const id_pergunta = req.params.id_pergunta;
+
+        modelo.deletar_pergunta(id_pergunta);
+
+        res.json({ id_pergunta: id_pergunta });
+    }
+    catch (erro) {
+        res.status(500).json(erro.message);
+    }
+});
+
 app.get('/respostas/:id_pergunta', (req, res) => {
   const id_pergunta = req.params.id_pergunta;
   const pergunta = modelo.get_pergunta(id_pergunta);
